@@ -5,3 +5,11 @@ body{
 h1{
     color : purple;
 }
+
+#Drawzone{
+    height : 300px;
+    width : 300px;
+    background-color: #ff8;
+    margin-top : 100px;
+    margin-left : 400px;
+}
