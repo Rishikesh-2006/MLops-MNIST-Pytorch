@@ -8,6 +8,7 @@ h1{
 
 #Drawzone{
 
+    touch-action: none;
     width : 280px;
     height : 280px;
     
