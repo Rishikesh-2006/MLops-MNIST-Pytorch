@@ -15,6 +15,7 @@ ctx.lineWidth = 3;
 canvas.addEventListener("mouseup",function(){
 
     drawval = false;
+
 });
 
 canvas.addEventListener("mousemove",function(info){
