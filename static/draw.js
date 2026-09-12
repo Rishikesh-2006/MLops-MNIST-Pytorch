@@ -21,6 +21,8 @@ ctx.lineWidth = 5;
 ctx.lineCap = "round";
 ctx.lineJoin = "round";
 
+
+//pc
 canvas.addEventListener("mouseup",function(){
 
     drawval = false;
@@ -57,6 +59,51 @@ canvas.addEventListener("mousedown",function(){
 
 });
 
+
+
+//touch
+
+canvas.addEventListener("pointerup",function(){
+
+    drawval = false;
+
+});
+
+canvas.addEventListener("pointerleave",function(){
+
+    drawval = false;
+
+});
+
+canvas.addEventListener("pointermove",function(info){
+
+    let x = info.offsetX/scale;
+    let y = info.offsetY/scale;
+
+
+
+    if(drawval === true)
+    {
+        ctx.beginPath();
+        ctx.moveTo(x,y);
+
+        ctx.lineTo(x2,y2);
+        ctx.stroke();
+        
+    }
+
+    x2 = x;
+    y2 = y;
+
+
+});
+
+canvas.addEventListener("pointerdown",function(){
+
+
+    drawval = true;
+
+});
 //save as png
 Submit.addEventListener("click",function(){
     canvas.toBlob(function(blob){
