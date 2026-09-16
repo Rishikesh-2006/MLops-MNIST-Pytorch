@@ -26,8 +26,8 @@ def predict():
     transform = transforms.ToTensor()
     input = transform(input)
     print(input.shape)
-    input = input.reshape(-1,28*28)
 
+    input = input.reshape(1,1,28,28)
     output = model(input)
 
     result = torch.argmax(output,dim = 1).item()

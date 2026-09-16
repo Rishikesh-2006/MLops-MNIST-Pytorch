@@ -59,8 +59,11 @@ canvas.addEventListener("pointermove",function(info){
 
 });
 
-canvas.addEventListener("pointerdown",function(){
+canvas.addEventListener("pointerdown",function(info){
 
+    
+    let x = info.offsetX/scale;
+    let y = info.offsetY/scale;
 
     drawval = true;
 
