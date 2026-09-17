@@ -8,6 +8,7 @@ h1{
 
 #Drawzone{
 
+    touch-action: none;
     width : 280px;
     height : 280px;
     
@@ -21,4 +22,10 @@ h1{
 
     image-rendering: pixelated;
     image-rendering: crisp-edges;
+}
+
+#pred
+{
+    margin-top:10px;
+    margin-left:510px;
 }
