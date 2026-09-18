@@ -17,7 +17,7 @@ let x2 = 0;
 let y2 = 0;
 
 const scale = 10;
-ctx.lineWidth = 5;
+ctx.lineWidth = 4
 ctx.lineCap = "round";
 ctx.lineJoin = "round";
 

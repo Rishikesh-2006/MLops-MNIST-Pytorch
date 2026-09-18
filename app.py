@@ -3,11 +3,17 @@ import torch
 from torchvision import datasets , transforms
 import pickle
 from network import Network
+
+
 app = Flask(__name__)
 from PIL import Image
+import torch.nn as nn
 
-  
-model = pickle.load(open('modelv2.pkl','rb'))
+model = Network(1)
+
+model.load_state_dict(torch.load("modelv2",map_location = torch.device('cpu')))
+
+model.eval()
 
 @app.route('/')
 def home():
@@ -25,14 +31,12 @@ def predict():
     input = Image.open("to_predict/image.png").convert("L")
     transform = transforms.ToTensor()
     input = transform(input)
-    print(input.shape)
-
     input = input.reshape(1,1,28,28)
+    print(input.shape)
     output = model(input)
 
     result = torch.argmax(output,dim = 1).item()
-    print(output)
-    print(result)
+
     return render_template('front.html',prediction = result)
 
 
